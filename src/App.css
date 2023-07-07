@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+:root{
+    --accent : #2abd67;
+}
 
 *,
 *::before,
@@ -10,22 +13,34 @@
 }
 
 body{
-    background: #8758ff;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background: #131315;
+}
+
+.header-container{
+    display: flex;
     align-items: center;
+    color: white;
+    background: black;
+    padding: 2rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+#head{
+    color: var(--accent)
 }
 
 .App{
     color: white;
-    text-align: center;
 }
 
 .TodoWrapper{
-    background: #1A1A40;
-    margin-top: 4rem;
-    padding: 4rem;
+    background: #131315;
+    padding: 2rem;
     border-radius: 8px;
+    text-align: center;
 }
 
 .TodoForm{
@@ -36,7 +51,7 @@ body{
     outline: none;
     background: none;
     color: #fff;
-    border: 1px solid #8758ff;
+    border: 1px solid var(--accent);
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     ;
@@ -44,8 +59,41 @@ body{
 
 .submit-btn{
     border: none;
-    background: #8758ff;
+    background: var(--accent);
     color: #fff;
     padding: 0.55rem;
     cursor: pointer;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgb(35 34 36);
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: start;
+    font-size: 0.5rem;
+    transition: 200ms;
+}
+
+.card > h1{
+    flex: 1;
+}
+
+.check{
+    height: 1.2rem;
+    width: 1.2rem;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.icon:hover{
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: 5px 8px 8px rgba(0,0,0,6);
+    transform: translateY(-5%);
 }
