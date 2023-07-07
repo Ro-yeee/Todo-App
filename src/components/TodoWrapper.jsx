@@ -7,8 +7,8 @@ uuid()
 
 function TodoWrapper() {
   const [todos,setTodos] = useState([])
-  const addTodo = (todo) =>{
-    setTodos([...todos, {id: uuid(),task: todo,completed: false,isEditing:false}])
+  const addTodo = (todo,priority) =>{
+    setTodos([...todos, {id: uuid(),task: todo,completed: false,isEditing:false,priority}])
   }
   const toggleComplete = (id) =>{
     setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
