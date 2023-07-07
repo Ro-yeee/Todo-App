@@ -72,27 +72,29 @@ body{
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding: 0.2rem 1rem;
+    padding: 0.2rem 0.2rem;
     background: var(--accent);
 }
 
-.radio{
-    width: 1rem;
+input[type='radio'] {
+    box-sizing: border-box;
+    appearance: none;
+    background: white;
+    border: 2px solid rgb(255, 255, 255);
+    width: 2rem;
     height: 1rem;
-    cursor: pointer;
 }
 
-#low{
-    accent-color: blue;
-    
+.radio0:checked{
+    background: blue;
 }
 
-#medium{
-    accent-color: yellow;
+.radio1:checked{
+    background: rgb(85, 255, 0);
 }
 
-#high{
-    accent-color: red;
+.radio2:checked{
+    background: red;
 }
 
 .card{
