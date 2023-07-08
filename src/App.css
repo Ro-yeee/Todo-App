@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 :root{
    /* --accent : #2abd67; */
-   --accent : rgb(0, 196, 193);
+   --accent : rgb(12, 196, 180);
 }
 
 *,
@@ -22,11 +22,37 @@ body{
 
 .header-container{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background: white;
     color: black;
     padding: 2rem;
     border-bottom: 4px solid var(--accent) ;
+    margin-bottom: 2rem;
+}
+
+.logo{
+    display: flex;
+    animation: moveinright 2s;
+}
+
+.routes{
+    display: flex;
+    gap: 1rem;
+    animation: moveinleft 2s;
+}
+
+.routes > button{
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.routes > 
+button:hover{
+    color: var(--accent);
 }
 
 .faCircleCheck{
@@ -51,19 +77,20 @@ body{
 
 .TodoForm{
     margin-top: 0.5rem;
-    width: 100%;
     display: flex;
-    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
     align-items: center;
 }
 
 .todo-input{
+    flex: 1;
     outline: none;
     background: none;
     color: #fff;
     border: 1px solid var(--accent);
     padding: 1.255rem 1rem;
-    ;
 }
 
 .submit-btn{
@@ -78,10 +105,46 @@ body{
     color: black;
 }
 
+.NotesWrapper{
+   padding: 1rem;
+}
+
+.noteContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+.NoteForm{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-input{
+    outline: none;
+    background: none;
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 1.255rem 1rem;
+}
+
+.note-submit-btn{
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    padding: 1.33rem;
+    cursor: pointer;
+}
+
+.note-submit-btn:hover{
+    color: black;
+}
+
 .radioBtnsContainer{
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.25rem;
     padding: 0.2rem 0.2rem;
     background: var(--accent);
 }
@@ -93,6 +156,7 @@ input[type='radio'] {
     border: 2px solid rgb(255, 255, 255);
     width: 2rem;
     height: 1rem;
+    cursor: pointer;
 }
 
 .radio0:checked,
@@ -158,9 +222,38 @@ input[type='radio'] {
 }
 
 #two{
-    border-left: 4px solid yellow;
+    border-left: 4px solid rgb(0, 255, 0);
 }
 
 #three{
     border-left: 4px solid red;
+}
+
+@keyframes moveinright{
+    0%{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes moveinleft{
+    0%{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width:500px){
+    html{
+        font-size: 12px;
+    }
+    .radioBtnsContainer{
+        gap: 0.47rem;
+    }
 }

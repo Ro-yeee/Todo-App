@@ -27,7 +27,6 @@ function TodoWrapper() {
       <TodoForm addTodo={addTodo} />
       {
         todos.map((element,index) => {
-          console.log(element)
           if(element.isEditing)
           return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
           else 
