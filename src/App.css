@@ -55,6 +55,10 @@ button:hover{
     color: var(--accent);
 }
 
+.active{
+    color: rgb(245, 0, 0);
+}
+
 .faCircleCheck{
     font-size: 3rem;
     color: var(--accent);
@@ -111,7 +115,10 @@ button:hover{
 
 .noteContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap:3rem;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 
 .NoteForm{
@@ -227,6 +234,20 @@ input[type='radio'] {
 
 #three{
     border-left: 4px solid red;
+}
+
+.noteCard{
+    min-width: 4rem;
+    min-height: 8rem;
+    overflow-wrap: break-word ;
+    background-color: rgb(255 238 0);
+    color: black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.noteCard > h2{
+    font-family:'Courier New', Courier, monospace;
 }
 
 @keyframes moveinright{

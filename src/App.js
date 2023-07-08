@@ -20,8 +20,8 @@ function App() {
               <h1 id="head">Todo</h1>
             </div>
             <div className="routes">
-              <button onClick={() => setPath("todos")}>Inbox</button>
-              <button onClick={() => setPath("notes")}>Notes</button>
+              <button className={path === "todos" ? "active" : null} onClick={() => setPath("todos")}>Inbox</button>
+              <button className={path === "notes" ? "active" : null} onClick={() => setPath("notes")}>Notes</button>
             </div>
           </div>
        </header>
