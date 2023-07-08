@@ -8,7 +8,7 @@ function App() {
     <div className="App">
        <header>
          <div className="header-container">
-            <FontAwesomeIcon icon={faCircleCheck} size="2xl" style={{color:"#2abd67",fontSize:"3rem"}} />
+            <FontAwesomeIcon icon={faCircleCheck} size="2xl" className="faCircleCheck" />
             <h1>What</h1>
             <h1 id="head">Todo</h1>
           </div>

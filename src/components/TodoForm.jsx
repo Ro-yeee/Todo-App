@@ -12,9 +12,9 @@ function TodoForm({addTodo}) {
       setPriority({status:false,val:null})
     }} className='TodoForm'>
       <div className='radioBtnsContainer'>
-        <input checked={priority.status} onChange={(e) => setPriority({status:e.target.checked.id,val:0})} type="radio" name="priority" className='radio0' required></input>
-        <input checked={priority.status} onChange={(e) => setPriority({status:e.target.checked.id,val:1})} type="radio" name="priority" className='radio1' required></input>
-        <input checked={priority.status} onChange={(e) => setPriority({status:e.target.checked.id,val:2})} type="radio" name="priority" className='radio2' required></input>
+        <input checked={priority.status} onChange={(e) => setPriority({status:e.checked,val:"0"})} type="radio" name="priority" className='radio0' required></input>
+        <input checked={priority.status} onChange={(e) => setPriority({status:e.checked,val:"1"})} type="radio" name="priority" className='radio1' required></input>
+        <input checked={priority.status} onChange={(e) => setPriority({status:e.checked,val:"2"})} type="radio" name="priority" className='radio2' required></input>
       </div>
       <input value={todo} onChange={(e) => {setTodo(e.target.value)}} className='todo-input' type="text" placeholder='What is the task today?' required/>
       <button className='submit-btn' type='submit'>Add Task</button>

@@ -19,14 +19,15 @@ function TodoWrapper() {
   const toggleEditing = (id) =>{
     setTodos(todos.map(todo => todo.id === id ? {...todo,isEditing: !todo.isEditing} : todo))
   }
-  const editTodo = (todo,id) =>{
-    setTodos(todos.map(element => element.id === id ? {...element, task:todo, isEditing: !element.isEditing} : element))
+  const editTodo = (todo,priority,id) =>{
+    setTodos(todos.map(element => element.id === id ? {...element, task:todo, isEditing: !element.isEditing,priority} : element))
   }
   return (
     <div className='TodoWrapper'>
       <TodoForm addTodo={addTodo} />
       {
         todos.map((element,index) => {
+          console.log(element)
           if(element.isEditing)
           return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
           else 
