@@ -78,6 +78,7 @@ button:hover{
     gap: 2rem;
     padding: 3rem;
     margin-top: 2rem;
+    animation: fadein 1.5s;
 }
 
 .TodoForm{
@@ -111,6 +112,7 @@ button:hover{
 .NotesWrapper{
    padding: 2rem;
    margin-top: 2rem;
+   animation: fadein 1.5s;
 }
 
 .noteContainer{
@@ -214,7 +216,7 @@ input[type='radio'] {
 }
 
 .card:hover{
-    box-shadow: 5px 8px 8px rgba(0,0,0,6);
+    box-shadow: 3px 3px 3px rgba(245, 245, 245,1);
     transform: translateY(-5%);
 }
 
@@ -243,10 +245,18 @@ input[type='radio'] {
     color: black;
     border-radius: 1rem;
     padding: 1rem;
+    animation: popup 600ms;
+    transition: 200ms;
 }
 
 .noteCard > h2{
     font-family:'Courier New', Courier, monospace;
+}
+
+.noteCard:hover{
+    box-shadow: 5px 5px 2px rgb(255, 255, 255,1);
+    transition: 200ms;
+    transform: translateY(-5%);
 }
 
 .EditTodoForm{
@@ -286,13 +296,38 @@ input[type='radio'] {
 }
 
 @keyframes popright {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
     from{
         opacity: 0;
-        transform: translateX(200%);
     }
     to{
         opacity: 1;
     }
+    
+}
+
+@keyframes popup {
+    from{
+        opacity: 0;
+        transform: scale(100%,0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
 }
 
 @media (max-width:500px){
