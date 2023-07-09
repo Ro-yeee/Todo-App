@@ -5,11 +5,11 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 function TodoCard({element,toggleComplete,deleteTask,toggleEditing}) {
   return (
-    <div className='card' id={element.priority === "0" ? "one" : element.priority === "1" ? "two" : "three"} >
+    <div className={element.completed ? "finished card" : "card"} id={element.priority === "0" ? "one" : element.priority === "1" ? "two" : "three"} >
       <input checked={element.completed} onChange={() => toggleComplete(element.id)} className='check' type='checkbox'></input>
-      <h1 className={`${element.completed ? "completed" : null}`}>{element.task}</h1>
-      <FontAwesomeIcon onClick={() => deleteTask(element.id)} icon={faTrash} size={"2xl"} className='icon' />
+      <h1 className={element.completed ? "completed" : null}>{element.task}</h1>
       <FontAwesomeIcon onClick={() =>toggleEditing(element.id)} icon={faPenToSquare} size={"2xl"} className='icon' />
+      <FontAwesomeIcon onClick={() => deleteTask(element.id)} icon={faTrash} size={"2xl"} className='icon' />
     </div>
   )
 }

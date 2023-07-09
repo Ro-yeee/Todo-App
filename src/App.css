@@ -75,15 +75,14 @@ button:hover{
 .TodoWrapper{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 2rem;
+    padding: 3rem;
+    margin-top: 2rem;
 }
 
 .TodoForm{
-    margin-top: 0.5rem;
     display: flex;
     width: 100%;
-    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
 }
@@ -110,7 +109,8 @@ button:hover{
 }
 
 .NotesWrapper{
-   padding: 1rem;
+   padding: 2rem;
+   margin-top: 2rem;
 }
 
 .noteContainer{
@@ -122,7 +122,6 @@ button:hover{
 }
 
 .NoteForm{
-    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,12 +185,13 @@ input[type='radio'] {
     align-items: center;
     gap: 1.5rem;
     background: rgb(35 34 36);
-    margin-top: 1rem;
     padding: 1rem;
     text-align: start;
     font-size: 0.6rem;
     transition: 200ms;
     border-left: green;
+    animation: popleft 1s;
+    border-radius: 10rem ;
 }
 
 .card > h1{
@@ -221,7 +221,6 @@ input[type='radio'] {
 .completed{
     text-decoration: line-through;
     text-decoration-color: red;
-    text-decoration-thickness: 2px;
 }
 
 #one{
@@ -250,6 +249,12 @@ input[type='radio'] {
     font-family:'Courier New', Courier, monospace;
 }
 
+.EditTodoForm{
+    animation: popright 1s;
+}
+.finished{
+    opacity: 0.5;
+}
 @keyframes moveinright{
     0%{
         opacity: 0;
@@ -266,6 +271,26 @@ input[type='radio'] {
         transform: translateX(-20px);
     }
     100%{
+        opacity: 1;
+    }
+}
+
+@keyframes popleft{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes popright {
+    from{
+        opacity: 0;
+        transform: translateX(200%);
+    }
+    to{
         opacity: 1;
     }
 }
