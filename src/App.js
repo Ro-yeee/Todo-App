@@ -26,6 +26,9 @@ function App() {
           </div>
        </header>
        {component}
+       <footer>
+        <p>Roy Joseph © {new Date().getFullYear()}</p>
+       </footer>
     </div>
   );
 }
