@@ -247,23 +247,36 @@ input[type='radio'] {
 .noteCard{
     min-width: 4rem;
     min-height: 8rem;
-    overflow-wrap: break-word ;
     background-color: rgb(255 238 0);
     color: black;
     border-radius: 1rem;
     padding: 1rem;
     animation: popup 600ms;
     transition: 200ms;
+    display: flex;
+    justify-content: space-between;
 }
 
 .noteCard > h2{
     font-family:'Courier New', Courier, monospace;
+    overflow-wrap: break-word ;
+    width: 50%;
+    flex: 1;
+    padding-right: 0.5rem;
 }
 
 .noteCard:hover{
     box-shadow: 5px 5px 2px rgb(255, 255, 255,1);
     transition: 200ms;
     transform: translateY(-5%);
+}
+
+.note-remove-icon{
+    font-size: 2rem;
+}
+
+.note-remove-icon:hover{
+    color: var(--accent);
 }
 
 .EditTodoForm{

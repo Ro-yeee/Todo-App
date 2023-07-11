@@ -8,15 +8,21 @@ function NotesWrapper() {
   const addNote = (note) => {
     setNotes([...notes,{id:uuid(),note}])
   }
+  const deleteNote = (id) =>{
+    setNotes(notes.filter(note => note.id !== id))
+  }
   return (
     <div className='NotesWrapper'>
       <NoteForm addNote={addNote} />
+      {notes.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> :
       <div className='noteContainer'>
         {
           notes.map((element,index)=>
-          <NoteCard element={element} key={index} />)
+          <NoteCard element={element} key={index} deleteNote={deleteNote}/>
+          )
         }
       </div>
+      }
      </div>
   )
 }
