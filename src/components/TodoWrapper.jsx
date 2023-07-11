@@ -26,6 +26,7 @@ function TodoWrapper() {
     <div className='TodoWrapper'>
       <TodoForm addTodo={addTodo} />
       {
+        todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> :
         todos.map((element,index) => {
           if(element.isEditing)
           return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
