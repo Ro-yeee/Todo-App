@@ -4,7 +4,10 @@ import { v4 as uuid } from 'uuid'
 import TodoCard from './TodoCard'
 import EditTodoForm from './EditTodoForm'
 import TodoNavElement from './TodoNavElement'
-import ShowCard from './ShowCard'
+import ShowCompletedCards from './ShowCompletedCards'
+import ShowLowCards from './ShowLowCards'
+import ShowMediumCards from './ShowMediumCards'
+import ShowHighCards from './ShowHighCards'
 uuid()
 
 function TodoWrapper() {
@@ -40,8 +43,15 @@ function TodoWrapper() {
                               toggleComplete={toggleComplete} 
                               deleteTask={deleteTask} 
                               toggleEditing={toggleEditing} />)
-            }) :
-                <ShowCard todos={todos} />
+            }) : selection === "Completed" ?
+                <ShowCompletedCards todos={todos} />
+               : selection === "Low" ?
+                <ShowLowCards/>
+               : selection === "Medium" ?
+                <ShowMediumCards/>
+               : selection === "High" ?
+                <ShowHighCards/>
+               : null
       }
       {
         todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : ""

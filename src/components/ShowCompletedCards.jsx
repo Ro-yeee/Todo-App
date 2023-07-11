@@ -1,7 +1,7 @@
 import React from 'react'
 
-function ShowCard({todos}) {
-    if(todos.filter(todo => todo.completed === true).length < 1 ) return <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> 
+function ShowCompletedCards({todos}) {
+    if(todos.filter(todo => todo.completed === true).length < 1 && todos.length >= 1 ) return <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> 
     else
         return (
             todos.filter(todo => todo.completed === true).map((element,index) => (
@@ -13,4 +13,4 @@ function ShowCard({todos}) {
   )
 }
 
-export default ShowCard
+export default ShowCompletedCards

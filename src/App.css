@@ -78,7 +78,8 @@ button:hover{
 }
 
 .emptyIllustration{
-    width: 100%;
+    width: 80%;
+    align-self: center;
 }
 
 .TodoWrapper{
@@ -86,7 +87,6 @@ button:hover{
     flex-direction: column;
     gap: 2rem;
     padding: 3rem;
-    animation: fadein 1.5s;
 }
 
 .navContainer{
@@ -154,6 +154,8 @@ button:hover{
 .NotesWrapper{
    padding: 2rem;
    animation: fadein 1.5s;
+   display: flex;
+   flex-direction: column;
 }
 
 .noteContainer{
@@ -398,5 +400,8 @@ footer{
     }
     .radioBtnsContainer{
         gap: 0.47rem;
+    }
+    .emptyIllustration{
+        width: 100%;
     }
 }
