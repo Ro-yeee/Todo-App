@@ -30,7 +30,7 @@ function TodoWrapper() {
       <TodoForm addTodo={addTodo} />
       <TodoNavElement selection={selection} setSetection={setSelection}/>
       {
-          todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : selection === "All Tasks" ?
+          selection === "All Tasks" ?
           todos.map((element,index) => {
             if(element.isEditing)
             return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
@@ -40,11 +40,13 @@ function TodoWrapper() {
                               toggleComplete={toggleComplete} 
                               deleteTask={deleteTask} 
                               toggleEditing={toggleEditing} />)
-            }) : 
-            todos.filter(todo => todo.completed === true).map((element,index) => (
-                <ShowCard element={element} key={index} />
-             ))
+            }) :
+                <ShowCard todos={todos} />
       }
+      {
+        todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : ""
+      }
+
     </div>
   )
 }
