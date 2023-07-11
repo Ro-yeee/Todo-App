@@ -3,10 +3,13 @@ import TodoForm from './TodoForm'
 import { v4 as uuid } from 'uuid'
 import TodoCard from './TodoCard'
 import EditTodoForm from './EditTodoForm'
+import TodoNavElement from './TodoNavElement'
+import ShowCard from './ShowCard'
 uuid()
 
 function TodoWrapper() {
   const [todos,setTodos] = useState([])
+  const [selection,setSelection] = useState("All Tasks")
   const addTodo = (todo,priority) =>{
     setTodos([...todos, {id: uuid(),task: todo,completed: false,isEditing:false,priority}])
   }
@@ -25,18 +28,22 @@ function TodoWrapper() {
   return (
     <div className='TodoWrapper'>
       <TodoForm addTodo={addTodo} />
+      <TodoNavElement selection={selection} setSetection={setSelection}/>
       {
-        todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> :
-        todos.map((element,index) => {
-          if(element.isEditing)
-          return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
-          else 
-          return (<TodoCard element={element} 
-                            key={index} 
-                            toggleComplete={toggleComplete} 
-                            deleteTask={deleteTask} 
-                            toggleEditing={toggleEditing} />)
-          })
+          todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : selection === "All Tasks" ?
+          todos.map((element,index) => {
+            if(element.isEditing)
+            return (<EditTodoForm editTodo={editTodo} element={element} key={index} />) 
+            else 
+            return (<TodoCard element={element} 
+                              key={index} 
+                              toggleComplete={toggleComplete} 
+                              deleteTask={deleteTask} 
+                              toggleEditing={toggleEditing} />)
+            }) : 
+            todos.filter(todo => todo.completed === true).map((element,index) => (
+                <ShowCard element={element} key={index} />
+             ))
       }
     </div>
   )

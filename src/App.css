@@ -17,7 +17,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #000000;
+    background: #122127;
 }
 
 .header-container{
@@ -87,6 +87,40 @@ button:hover{
     gap: 2rem;
     padding: 3rem;
     animation: fadein 1.5s;
+}
+
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionHeading{
+    font-size: 1.6rem;
+}
+
+.navBtnContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navBtn{
+    text-decoration: none;
+    border: 0px;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+.navBtn:hover{
+    color: var(--accent);
+}
+
+.activee{
+    border-bottom: 2px solid red;
+    transform: translateY(4%);
 }
 
 .TodoForm{
