@@ -14,7 +14,7 @@ function NotesWrapper() {
   return (
     <div className='NotesWrapper'>
       <NoteForm addNote={addNote} />
-      {notes.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> :
+      {notes.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : ""}
       <div className='noteContainer'>
         {
           notes.map((element,index)=>
@@ -22,7 +22,6 @@ function NotesWrapper() {
           )
         }
       </div>
-      }
      </div>
   )
 }
