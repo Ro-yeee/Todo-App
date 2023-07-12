@@ -5,7 +5,7 @@ function ShowCompletedCards({todos}) {
     else
         return (
             todos.filter(todo => todo.completed === true).map((element,index) => (
-                <div className="card" id={element.priority === "0" ? "one" : element.priority === "1" ? "two" : "three"} >
+                <div className="card" id={element.priority === "Low" ? "one" : element.priority === "Medium" ? "two" : "three"} >
                     <input checked={element.completed} className='check' type='checkbox' style={{cursor:'default'}}></input>
                     <h1>{element.task}</h1>
                 </div>

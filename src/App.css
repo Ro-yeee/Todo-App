@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
 :root{
-   /* --accent : #2abd67; */
    --accent : rgb(12, 196, 180);
-   --low : green;
+   --low : rgb(0, 255, 0);
    --medium : yellow;
    --high : red;
 }
@@ -96,9 +95,12 @@ button:hover{
 .navContainer{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
 }
 
-.sectionHeading{
+.sectionheading{
     font-size: 1.6rem;
 }
 
@@ -111,14 +113,17 @@ button:hover{
 .faBars{
     cursor: pointer;
 }
+.faBars:hover{
+    color: var(--accent);
+}
 
 .dropdown{
     list-style: none;
     text-align: center;
-    padding: 0.5rem;
-    background: rgb(255, 255, 255);
-    color: black;
+    background:  rgb(1, 15, 14);
+    color: white;
     display: none;
+    border-radius: 10px;
     transform-origin: top;
 }
 
@@ -129,21 +134,19 @@ button:hover{
 
 .list{
     cursor: pointer;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
 }
 
 .list:hover{
     background-color: #073939;
 }
 
-.low:hover{
-    background: var(--low);
-}
-.medium:hover{
-    background: var(--medium);
-}
-.high:hover{
-    background: var(--high);
-}
+.low{color: var(--low);}
+.medium{color: var(--medium);}
+.high{color: var(--high);}
+
 
 .TodoForm{
     display: flex;
@@ -251,12 +254,11 @@ input[type='radio'] {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background: rgb(35 34 36);
+    background: rgb(0, 0, 0);
     padding: 1rem;
     text-align: start;
     font-size: 0.6rem;
     transition: 200ms;
-    border-left: green;
     animation: popleft 1s;
     border-radius: 10rem ;
 }
@@ -281,8 +283,8 @@ input[type='radio'] {
 }
 
 .card:hover{
-    box-shadow: 3px 3px 3px rgba(245, 245, 245,1);
-    transform: translateY(-5%);
+    box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.834);
+    transform: translate(-0.2%,-5%);
 }
 
 .completed{
@@ -291,21 +293,21 @@ input[type='radio'] {
 }
 
 #one{
-    border-left: 4px solid var(--low);
+    border-left: 6px solid var(--low);
 }
 
 #two{
-    border-left: 4px solid var(--medium);
+    border-left: 6px solid var(--medium);
 }
 
 #three{
-    border-left: 4px solid var(--high);
+    border-left: 6px solid var(--high);
 }
 
 .noteCard{
     min-width: 4rem;
     min-height: 8rem;
-    background-color: rgb(255 238 0);
+    background-color: rgb(255, 221, 0);
     color: black;
     border-radius: 1rem;
     padding: 1rem;
@@ -324,13 +326,14 @@ input[type='radio'] {
 }
 
 .noteCard:hover{
-    box-shadow: 5px 5px 2px rgb(255, 255, 255,1);
+    box-shadow: 4px 4px 2px rgb(15, 201, 201);
     transition: 200ms;
-    transform: translateY(-5%);
+    transform: translate(-0.2%,-5%);
 }
 
 .note-remove-icon{
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .note-remove-icon:hover{
