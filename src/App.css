@@ -129,7 +129,9 @@ button:hover{
 
 .dropActive{
     animation: navpopdown 500ms ease-in-out;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .list{
@@ -151,12 +153,13 @@ button:hover{
 .TodoForm{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .todo-input{
     flex: 1;
+    width: 0;
     outline: none;
     background: none;
     color: #fff;
@@ -178,6 +181,7 @@ button:hover{
 
 .NotesWrapper{
    padding: 2rem;
+   width: 100%;
    animation: fadein 1.5s;
    display: flex;
    flex-direction: column;
@@ -193,11 +197,15 @@ button:hover{
 
 .NoteForm{
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
 .note-input{
+    flex:1;
+    max-width:14rem;
+    width: 0;
     outline: none;
     background: none;
     color: #fff;
