@@ -12,11 +12,11 @@ function TodoNavElement({selection,setSelection}) {
     <div className='navContainer'>
       <h2 className='sectionheading'>{selection}</h2>
       <div className='HamburgerMenu'>
-        <FontAwesomeIcon onClick={() => setClick(!click)} icon={faBars} size='xl'/>
+        <FontAwesomeIcon onClick={() => setClick(!click)} icon={faBars} size='xl' className='faBars'/>
         <ul className={click === true ? "dropActive dropdown" : "dropdown"}>
             <li className='list' onClick={() => selected("All Tasks")}>All</li>
             <li className='list' onClick={() => selected("Completed")}>Completed</li>
-            <li className='low' onClick={() => selected("Low Priority")}>Low Priorit</li>
+            <li className='low' onClick={() => selected("Low Priority")}>Low Priority</li>
             <li className='medium' onClick={() => selected("Medium Priority")}>Medium Priority</li>
             <li className='high' onClick={() => selected("High Priority")}>High Priority</li>
         </ul>

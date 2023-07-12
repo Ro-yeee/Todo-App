@@ -30,8 +30,8 @@ function TodoWrapper() {
   }
   return (
     <div className='TodoWrapper'>
-      <TodoNavElement selection={selection} setSelection={setSelection}/>
       { selection === "All Tasks" && <TodoForm addTodo={addTodo}/> }
+      <TodoNavElement selection={selection} setSelection={setSelection}/>
       {
           selection === "All Tasks" ?
           todos.map((element,index) => {
@@ -45,12 +45,12 @@ function TodoWrapper() {
                               toggleEditing={toggleEditing} />)
             }) : selection === "Completed" ?
                 <ShowCompletedCards todos={todos} />
-               : selection === "Low" ?
-                <ShowLowCards/>
-               : selection === "Medium" ?
-                <ShowMediumCards/>
-               : selection === "High" ?
-                <ShowHighCards/>
+               : selection === "Low Priority" ?
+                <ShowLowCards todos={todos} toggleComplete={toggleComplete} />
+               : selection === "Medium Priority" ?
+                <ShowMediumCards todos={todos} toggleComplete={toggleComplete} />
+               : selection === "High Priority" ?
+                <ShowHighCards todos={todos} toggleComplete={toggleComplete} />
                : null
       }
       {

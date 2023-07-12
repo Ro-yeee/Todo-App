@@ -107,6 +107,10 @@ button:hover{
     align-items: flex-end;
 }
 
+.faBars{
+    cursor: pointer;
+}
+
 .dropdown{
     list-style: none;
     text-align: center;
@@ -114,12 +118,11 @@ button:hover{
     background: rgb(255, 255, 255);
     color: black;
     display: none;
+    cursor: pointer;
 }
 
 .dropActive{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: block;
 }
 
 .list:hover{
