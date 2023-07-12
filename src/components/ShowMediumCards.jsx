@@ -1,7 +1,7 @@
 import React from 'react'
 
 function ShowMediumCards({todos,toggleComplete}) {
-    if(todos.filter(todo => todo.priority === "1").length < 1 && todos.length > 1 ) return <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> 
+    if(todos.filter(todo => todo.priority === "1").length < 1 && todos.length > 0 ) return <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> 
     else
         return (
             todos.filter(todo => todo.priority === "1").map((element,index) => (

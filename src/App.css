@@ -90,6 +90,7 @@ button:hover{
     flex-direction: column;
     gap: 2rem;
     padding: 3rem;
+    animation: fadein 1.5s;
 }
 
 .navContainer{
@@ -118,11 +119,16 @@ button:hover{
     background: rgb(255, 255, 255);
     color: black;
     display: none;
-    cursor: pointer;
+    transform-origin: top;
 }
 
 .dropActive{
+    animation: navpopdown 500ms ease-in-out;
     display: block;
+}
+
+.list{
+    cursor: pointer;
 }
 
 .list:hover{
@@ -409,6 +415,20 @@ footer{
         transform: scale(1);
     }
     
+}
+
+@keyframes navpopdown {
+    from{
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    70%{
+        opacity: 1;
+        transform: scaleY(1.1);
+    }
+    100% {
+        transform: scaleY(1);
+      }
 }
 
 @media (max-width:500px){

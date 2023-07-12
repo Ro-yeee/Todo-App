@@ -16,9 +16,9 @@ function TodoNavElement({selection,setSelection}) {
         <ul className={click === true ? "dropActive dropdown" : "dropdown"}>
             <li className='list' onClick={() => selected("All Tasks")}>All</li>
             <li className='list' onClick={() => selected("Completed")}>Completed</li>
-            <li className='low' onClick={() => selected("Low Priority")}>Low Priority</li>
-            <li className='medium' onClick={() => selected("Medium Priority")}>Medium Priority</li>
-            <li className='high' onClick={() => selected("High Priority")}>High Priority</li>
+            <li className='list low' onClick={() => selected("Low Priority")}>Low Priority</li>
+            <li className='list medium' onClick={() => selected("Medium Priority")}>Medium Priority</li>
+            <li className='list high' onClick={() => selected("High Priority")}>High Priority</li>
         </ul>
       </div>
     </div>

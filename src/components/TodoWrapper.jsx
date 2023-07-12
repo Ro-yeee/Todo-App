@@ -54,7 +54,7 @@ function TodoWrapper() {
                : null
       }
       {
-        todos.length < 1 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : ""
+        todos.length === 0 ? <img src="Empty-amico.png" alt="Looks Empty" className='emptyIllustration'/> : ""
       }
 
     </div>
