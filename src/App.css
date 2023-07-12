@@ -2,6 +2,9 @@
 :root{
    /* --accent : #2abd67; */
    --accent : rgb(12, 196, 180);
+   --low : green;
+   --medium : yellow;
+   --high : red;
 }
 
 *,
@@ -92,35 +95,45 @@ button:hover{
 .navContainer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .sectionHeading{
     font-size: 1.6rem;
 }
 
-.navBtnContainer{
+.HamburgerMenu{
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.navBtn{
-    text-decoration: none;
-    border: 0px;
-    background: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: white;
+.dropdown{
+    list-style: none;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgb(255, 255, 255);
+    color: black;
+    display: none;
 }
 
-.navBtn:hover{
-    color: var(--accent);
+.dropActive{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.activee{
-    border-bottom: 2px solid red;
-    transform: translateY(4%);
+.list:hover{
+    background-color: #073939;
+}
+
+.low:hover{
+    background: var(--low);
+}
+.medium:hover{
+    background: var(--medium);
+}
+.high:hover{
+    background: var(--high);
 }
 
 .TodoForm{
@@ -212,17 +225,17 @@ input[type='radio'] {
 
 .radio0:checked,
 .radio0:hover{
-    background: blue;
+    background: var(--low);
 }
 
 .radio1:checked,
 .radio1:hover{
-    background: rgb(85, 255, 0);
+    background: var(--medium);
 }
 
 .radio2:checked,
 .radio2:hover{
-    background: red;
+    background: var(--high);
 }
 
 .card{
@@ -269,15 +282,15 @@ input[type='radio'] {
 }
 
 #one{
-    border-left: 4px solid blue;
+    border-left: 4px solid var(--low);
 }
 
 #two{
-    border-left: 4px solid rgb(0, 255, 0);
+    border-left: 4px solid var(--medium);
 }
 
 #three{
-    border-left: 4px solid red;
+    border-left: 4px solid var(--high);
 }
 
 .noteCard{
@@ -329,6 +342,7 @@ footer{
     text-align: center;
     animation: popup 1.5s;
 }
+
 @keyframes moveinright{
     0%{
         opacity: 0;

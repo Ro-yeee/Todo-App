@@ -30,8 +30,8 @@ function TodoWrapper() {
   }
   return (
     <div className='TodoWrapper'>
-      <TodoForm addTodo={addTodo} />
-      <TodoNavElement selection={selection} setSetection={setSelection}/>
+      <TodoNavElement selection={selection} setSelection={setSelection}/>
+      { selection === "All Tasks" && <TodoForm addTodo={addTodo}/> }
       {
           selection === "All Tasks" ?
           todos.map((element,index) => {

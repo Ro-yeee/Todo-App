@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-function TodoNavElement({selection,setSetection}) {
+function TodoNavElement({selection,setSelection}) {
+    const [click,setClick] = useState(false)
+    const selected = (item) =>{
+        setSelection(item)
+        setClick(!click)
+    }
   return (
     <div className='navContainer'>
-      <h2 className='sectionHeading'>{selection}</h2>
-      <div className='navBtnContainer'>
-        <button onClick={() => setSetection("All Tasks")} className={selection === "All Tasks" ? 'activee navBtn' : 'navBtn'} >All</button>
-        <button onClick={() => setSetection("Completed")} className={selection === "Completed" ? 'activee navBtn' : 'navBtn'} >Completed</button>
+      <h2 className='sectionheading'>{selection}</h2>
+      <div className='HamburgerMenu'>
+        <FontAwesomeIcon onClick={() => setClick(!click)} icon={faBars} size='xl'/>
+        <ul className={click === true ? "dropActive dropdown" : "dropdown"}>
+            <li className='list' onClick={() => selected("All Tasks")}>All</li>
+            <li className='list' onClick={() => selected("Completed")}>Completed</li>
+            <li className='low' onClick={() => selected("Low Priority")}>Low Priorit</li>
+            <li className='medium' onClick={() => selected("Medium Priority")}>Medium Priority</li>
+            <li className='high' onClick={() => selected("High Priority")}>High Priority</li>
+        </ul>
       </div>
     </div>
   )
