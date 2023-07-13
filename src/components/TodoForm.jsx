@@ -12,9 +12,9 @@ function TodoForm({addTodo}) {
       setPriority(null)
     }} className='TodoForm'>
       <div className='radioBtnsContainer'>
-        <input checked={priority === "Low"} onChange={(e) => setPriority("Low")} type="radio" name="priority" className='radio0' required></input>
-        <input checked={priority === "Medium"} onChange={(e) => setPriority("Medium")} type="radio" name="priority" className='radio1' required></input>
-        <input checked={priority === "High"} onChange={(e) => setPriority("High")} type="radio" name="priority" className='radio2' required></input>
+        <input checked={priority === "Low"} onChange={() => setPriority("Low")} type="radio" name="priority" className='radio0' required></input>
+        <input checked={priority === "Medium"} onChange={() => setPriority("Medium")} type="radio" name="priority" className='radio1' required></input>
+        <input checked={priority === "High"} onChange={() => setPriority("High")} type="radio" name="priority" className='radio2' required></input>
       </div>
       <input value={todo} onChange={(e) => {setTodo(e.target.value)}} className='todo-input' type="text" placeholder='What is the task today?' required/>
       <button className='submit-btn' type='submit'>Add Task</button>

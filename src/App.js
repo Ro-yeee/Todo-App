@@ -1,9 +1,10 @@
 import "./App.css"
 import TodoWrapper from "./components/TodoWrapper";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck} from "@fortawesome/free-solid-svg-icons";
 import NotesWrapper from "./components/NotesWrapper";
 import { useState } from "react";
+import { faGithubAlt} from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const [path,setPath] = useState("todos")
@@ -27,7 +28,7 @@ function App() {
        </header>
        {component}
        <footer>
-        <p>Roy Joseph © {new Date().getFullYear()}</p>
+        <p>Roy Joseph © {new Date().getFullYear()} <a href="https://github.com/Ro-yeee" className="github" ><FontAwesomeIcon icon={faGithubAlt} flip/></a></p>
        </footer>
     </div>
   );

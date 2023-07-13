@@ -363,6 +363,11 @@ footer{
     animation: popup 1.5s;
 }
 
+.github{
+    text-decoration: none;
+    color: inherit;
+}
+
 @keyframes moveinright{
     0%{
         opacity: 0;

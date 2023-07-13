@@ -11,9 +11,9 @@ function EditTodoForm({editTodo,element}) {
       editTodo(todo,prio,element.id)
     }} className='TodoForm EditTodoForm'>
       <div className='radioBtnsContainer'>
-        <input checked = {prio === 'Low'} onChange={(e) => setPriority("Low")} type="radio" name="priority" className='radio0' required></input>
-        <input checked = {prio === "Medium"} onChange={(e) => setPriority("Medium")} type="radio" name="priority" className='radio1' required></input>
-        <input checked = {prio === "High"} onChange={(e) => setPriority("High")} type="radio" name="priority" className='radio2' required></input>
+        <input checked = {prio === 'Low'} onChange={() => setPriority("Low")} type="radio" name="priority" className='radio0' required></input>
+        <input checked = {prio === "Medium"} onChange={() => setPriority("Medium")} type="radio" name="priority" className='radio1' required></input>
+        <input checked = {prio === "High"} onChange={() => setPriority("High")} type="radio" name="priority" className='radio2' required></input>
       </div>
       <input value={todo} onChange={(e) => {setTodo(e.target.value)}} className='todo-input' type="text" placeholder='What is the updated task?' required/>
       <button className='submit-btn' type='submit'>Update</button>
