@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NoteForm from './NoteForm'
 import { v4 as uuid } from 'uuid'
 import NoteCard from './NoteCard'
 
 function NotesWrapper() {
-  const [notes,setNotes] = useState([])
+  const [notes,setNotes] = useState(localStorage.getItem("Notes") ? JSON.parse(localStorage.getItem("Notes")) : [])
+  useEffect(() =>{
+    localStorage.setItem("Notes",JSON.stringify(notes))
+  })
   const addNote = (note) => {
     setNotes([...notes,{id:uuid(),note}])
   }

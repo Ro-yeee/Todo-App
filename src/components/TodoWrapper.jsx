@@ -1,4 +1,4 @@
-import React ,{useState} from 'react'
+import React ,{useEffect, useState} from 'react'
 import TodoForm from './TodoForm'
 import { v4 as uuid } from 'uuid'
 import TodoCard from './TodoCard'
@@ -11,7 +11,10 @@ import ShowHighCards from './ShowHighCards'
 uuid()
 
 function TodoWrapper() {
-  const [todos,setTodos] = useState([])
+  const [todos,setTodos] = useState(localStorage.getItem("Todos") ? JSON.parse(localStorage.getItem("Todos")) : [])
+  useEffect(() =>{
+    localStorage.setItem("Todos",JSON.stringify(todos))
+  })
   const [selection,setSelection] = useState("All Tasks")
   const addTodo = (todo,priority) =>{
     setTodos([...todos, {id: uuid(),task: todo,completed: false,isEditing:false,priority}])
